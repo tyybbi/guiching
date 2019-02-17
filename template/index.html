@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/stylesheets/main.css">
+    <title>Hexing</title>
+  </head>
+  <body>
+      <h1>Hexing</h1>
+      <p>
+      <h2>Primary Figure</h2>
+      <ul>
+        <li class="hexnumber">{{.PId}}</li>
+        {{range .PLines}}
+        <li i>{{.}}</li>
+        {{end}}
+        <li class="hexname">{{.PName}}</li>
+        <li>{{.PDesc}}</li>
+      </ul>
+      <br>
+      {{if .Rel}}
+      <h2>Relating Figure</h2>
+      <ul>
+        <li class="hexnumber">{{.RId}}</li>
+        {{range .RLines}}
+        <li>{{.}}</li>
+        {{end}}
+        <li class="hexname">{{.RName}}</li>
+        <li>{{.RDesc}}</li>
+      </ul>
+      {{end}}
+      </p>
+  </body>
+</html>
+

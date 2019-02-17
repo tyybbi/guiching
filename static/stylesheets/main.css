@@ -1,0 +1,31 @@
+body,html {
+    margin:0em;
+    padding:0em;
+}
+
+body {
+    background:white;
+    color:black;
+    font-family:'dejavu sans mono', 'lucida console', console, terminal, monospace;
+    font-size:11px;
+    padding:.2em;
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+li {
+    width: 130px;
+}
+.hexnumber {
+    padding: 2px;
+    font-weight: bold;
+}
+.hexname {
+    padding: 4px;
+    font-style: italic;
+}
+
+
