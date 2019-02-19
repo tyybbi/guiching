@@ -5,7 +5,7 @@ to serve stuff onto an HTML page.
 
 ## Usage
 
-Run *hexing* by `go build && ./hexing` or just by `go run *.go` in the project
+Run **hexing** by `go build && ./hexing` or just by `go run *.go` in the project
 root directory. Then, in a web browser, visit http://localhost:8080 to
 see your newly generated hexagram(s).
 
