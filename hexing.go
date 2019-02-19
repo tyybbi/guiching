@@ -42,9 +42,7 @@ func importHexagramData() Hexagrams {
 		fmt.Println(err)
 	}
 	defer jsonFile.Close()
-
 	byteValue, _ := ioutil.ReadAll(jsonFile)
-
 	json.Unmarshal(byteValue, &hexagrams)
 
 	return hexagrams
@@ -80,7 +78,7 @@ func generateHexagram(coins bool) [6]string {
 			"---   ---", "---   ---", "---   ---", "---   ---", "---   ---",
 			"---   ---", "---   ---"}
 
-		for i := 0; i < 6; i++ {
+		for i := 0; i < len(freshHexagram); i++ {
 			line := rand.Intn(len(marbles))
 			freshHexagram[i] = marbles[line]
 		}
