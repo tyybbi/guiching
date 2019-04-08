@@ -16,5 +16,4 @@ see your newly generated hexagram(s).
 - The coins method of randomization never gets used because nothing can change
   the boolean value to true. This may change in the future if I'm willing to
   bring some JS into the picture.
-- I'm still very new to Golang, the code quality probably reflects that.
 
