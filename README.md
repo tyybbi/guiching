@@ -9,11 +9,8 @@ Run **hexing** by `go build && ./hexing` or just by `go run *.go` in the project
 root directory. Then, in a web browser, visit http://localhost:8080 to
 see your newly generated hexagram(s).
 
-### Couple of curiosities
+### Notes
 
 - The app does not use any JavaScript/Ajax etc. so just refresh the page to generate
   new shapes.
-- The coins method of randomization never gets used because nothing can change
-  the boolean value to true. This may change in the future if I'm willing to
-  bring some JS into the picture.
 

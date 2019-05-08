@@ -48,40 +48,19 @@ func importHexagramData() Hexagrams {
 	return hexagrams
 }
 
-func generateHexagram(coins bool) [6]string {
+func generateHexagram() [6]string {
 	var freshHexagram [6]string
 
-	// "Coin tossing method"
-	if coins {
-		for i := 0; i < len(freshHexagram); i++ {
-			c1 := rand.Intn(4-2) + 2
-			c2 := rand.Intn(4-2) + 2
-			c3 := rand.Intn(4-2) + 2
-			sum := c1 + c2 + c3
+	marbles := [16]string{
+		"--- X ---",
+		"----O----", "----O----", "----O----",
+		"---------", "---------", "---------", "---------", "---------",
+		"---   ---", "---   ---", "---   ---", "---   ---", "---   ---",
+		"---   ---", "---   ---"}
 
-			if sum == 6 {
-				freshHexagram[i] = "--- X ---"
-			} else if sum == 9 {
-				freshHexagram[i] = "----O----"
-			} else if sum == 7 {
-				freshHexagram[i] = "---------"
-			} else {
-				freshHexagram[i] = "---   ---"
-			}
-		}
-	} else {
-		// "Picking marbles method"
-		marbles := [16]string{
-			"--- X ---",
-			"----O----", "----O----", "----O----",
-			"---------", "---------", "---------", "---------", "---------",
-			"---   ---", "---   ---", "---   ---", "---   ---", "---   ---",
-			"---   ---", "---   ---"}
-
-		for i := 0; i < len(freshHexagram); i++ {
-			line := rand.Intn(len(marbles))
-			freshHexagram[i] = marbles[line]
-		}
+	for i := 0; i < len(freshHexagram); i++ {
+		line := rand.Intn(len(marbles))
+		freshHexagram[i] = marbles[line]
 	}
 
 	return freshHexagram
@@ -91,14 +70,14 @@ func createShapes(w http.ResponseWriter, r *http.Request) {
 	h := importHexagramData()
 	rand.Seed(time.Now().UnixNano())
 
-	var relating, coins bool = false, false
+	var relating bool = false
 	var initialHxgrm, primaryShape, relatingShape [6]string
 	pageVars := PageVars{}
 
 	phex := Hexagram{}
 	rhex := Hexagram{}
 
-	initialHxgrm = generateHexagram(coins)
+	initialHxgrm = generateHexagram()
 
 	for i := 0; i < len(initialHxgrm); i++ {
 		if initialHxgrm[i] == "--- X ---" {
