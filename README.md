@@ -9,8 +9,3 @@ Run **guiching** by `go build && ./guiching` or just by `go run *.go` in the pro
 root directory. Then, in a web browser, visit http://localhost:8080 to
 see your newly generated hexagram(s).
 
-### Notes
-
-- The app does not use any JavaScript/Ajax etc. so just refresh the page to generate
-  new shapes.
-
