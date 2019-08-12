@@ -12,10 +12,10 @@
       <ul>
         <li class="hexnumber">{{.PId}}</li>
         {{range .PLines}}
-        <li i>{{.}}</li>
+        <li>{{.}}</li>
         {{end}}
         <li class="hexname">{{.PName}}</li>
-        <li>{{.PDesc}}</li>
+        <li class="hexdesc">{{.PDesc}}</li>
       </ul>
       <br>
       {{if .Rel}}
@@ -26,9 +26,13 @@
         <li>{{.}}</li>
         {{end}}
         <li class="hexname">{{.RName}}</li>
-        <li>{{.RDesc}}</li>
+        <li class="hexdesc">{{.RDesc}}</li>
       </ul>
       {{end}}
+      </p>
+      <p>
+        <button type="button" value="New hexagram"
+          onClick="window.location.reload();">New hexagram</button>
       </p>
   </body>
 </html>

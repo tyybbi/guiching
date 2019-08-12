@@ -1,31 +1,45 @@
-body,html {
-    margin:0em;
-    padding:0em;
+body, html {
+    margin: 0em;
+    padding: 0em;
 }
 
 body {
-    background:white;
-    color:black;
-    font-family:'dejavu sans mono', 'lucida console', console, terminal, monospace;
-    font-size:11px;
-    padding:.2em;
+    background: white;
+    color: black;
+    font-family: 'dejavu sans mono', 'lucida console', console, terminal, monospace;
+    font-size: 11px;
+    padding: .2em;
+    text-align: center;
+}
+
+p {
+    text-align: center;
 }
 
 ul {
     list-style-type: none;
-    text-align: center;
+    width: 30%;
+    margin: auto;
+    padding: 0px 0px 0px 0px;
 }
 
-li {
-    width: 130px;
+button {
+    font-family: 'dejavu sans mono', 'lucida console', console, terminal, monospace;
+    font-size: 11px;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
 }
+
 .hexnumber {
     padding: 2px;
     font-weight: bold;
 }
+
 .hexname {
     padding: 4px;
     font-style: italic;
 }
-
 
