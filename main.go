@@ -7,7 +7,7 @@ import (
 	"net/http"
 )
 
-type PageVars struct {
+type pageVars struct {
 	PId    int
 	RId    int
 	PName  string
@@ -29,7 +29,7 @@ func main() {
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
-func render(w http.ResponseWriter, tmpl string, pageVars PageVars) {
+func render(w http.ResponseWriter, tmpl string, pageVars pageVars) {
 
 	tmpl = fmt.Sprintf("template/%s", tmpl)
 	t, err := template.ParseFiles(tmpl)

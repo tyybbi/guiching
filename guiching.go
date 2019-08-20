@@ -11,13 +11,15 @@ import (
 	"time"
 )
 
+// Hexagram holds the data parsed from JSON file
 type Hexagram struct {
-	Id    int       `json:"id"`
+	ID    int       `json:"id"`
 	Lines [6]string `json:"lines"`
 	Name  string    `json:"name"`
 	Desc  string    `json:"desc"`
 }
 
+// Hexagrams holds hexagrams from JSON file
 type Hexagrams struct {
 	Hexagrams []Hexagram `json:"hexagrams"`
 }
@@ -70,9 +72,9 @@ func createShapes(w http.ResponseWriter, r *http.Request) {
 	h := importHexagramData()
 	rand.Seed(time.Now().UnixNano())
 
-	var relating bool = false
+	var relating = false
 	var initialHxgrm, primaryShape, relatingShape [6]string
-	pageVars := PageVars{}
+	vars := pageVars{}
 
 	phex := Hexagram{}
 	rhex := Hexagram{}
@@ -101,7 +103,7 @@ func createShapes(w http.ResponseWriter, r *http.Request) {
 		for i := 0; i < len(h.Hexagrams); i++ {
 			match := findHexagram(primaryShape, h.Hexagrams[i].Lines)
 			if match {
-				phex.Id = h.Hexagrams[i].Id
+				phex.ID = h.Hexagrams[i].ID
 				phex.Name = h.Hexagrams[i].Name
 				if relating {
 					phex.Lines = initialHxgrm
@@ -123,7 +125,7 @@ func createShapes(w http.ResponseWriter, r *http.Request) {
 			for i := 0; i < len(h.Hexagrams); i++ {
 				match := findHexagram(relatingShape, h.Hexagrams[i].Lines)
 				if match {
-					rhex.Id = h.Hexagrams[i].Id
+					rhex.ID = h.Hexagrams[i].ID
 					rhex.Name = h.Hexagrams[i].Name
 					rhex.Lines = h.Hexagrams[i].Lines
 					rhex.Desc = h.Hexagrams[i].Desc
@@ -136,9 +138,9 @@ func createShapes(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	pageVars = PageVars{
-		PId:    phex.Id,
-		RId:    rhex.Id,
+	vars = pageVars{
+		PId:    phex.ID,
+		RId:    rhex.ID,
 		PName:  phex.Name,
 		RName:  rhex.Name,
 		PLines: phex.Lines,
@@ -148,5 +150,5 @@ func createShapes(w http.ResponseWriter, r *http.Request) {
 		Rel:    relating,
 	}
 
-	render(w, "index.html", pageVars)
+	render(w, "index.html", vars)
 }
