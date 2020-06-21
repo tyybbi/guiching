@@ -11,9 +11,13 @@
       <h2>Primary Figure</h2>
       <ul>
         <li class="hexnumber">{{.PId}}</li>
-        {{range .PLines}}
-        <li>{{.}}</li>
-        {{end}}
+        <li>{{index .PLines 5}}</li>
+        <li>{{index .PLines 4}}</li>
+        <li>{{index .PLines 3}}</li>
+        <li>{{index .PLines 2}}</li>
+        <li>{{index .PLines 1}}</li>
+        <li>{{index .PLines 0}}</li>
+
         <li class="hexname">{{.PName}}</li>
         <li class="hexdesc">{{.PDesc}}</li>
       </ul>
@@ -22,9 +26,13 @@
       <h2>Relating Figure</h2>
       <ul>
         <li class="hexnumber">{{.RId}}</li>
-        {{range .RLines}}
-        <li>{{.}}</li>
-        {{end}}
+        <li>{{index .RLines 5}}</li>
+        <li>{{index .RLines 4}}</li>
+        <li>{{index .RLines 3}}</li>
+        <li>{{index .RLines 2}}</li>
+        <li>{{index .RLines 1}}</li>
+        <li>{{index .RLines 0}}</li>
+
         <li class="hexname">{{.RName}}</li>
         <li class="hexdesc">{{.RDesc}}</li>
       </ul>
