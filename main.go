@@ -26,7 +26,7 @@ func main() {
 
 	http.HandleFunc("/", createShapes)
 
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":3000", nil))
 }
 
 func render(w http.ResponseWriter, tmpl string, pageVars pageVars) {
