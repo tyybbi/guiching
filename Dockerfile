@@ -1,7 +1,5 @@
 FROM golang:alpine AS builder
 
-#RUN mkdir -p /go/src/github.com/tyybbi/guiching
-
 WORKDIR /guiching
 
 COPY . /guiching
