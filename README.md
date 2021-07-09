@@ -9,3 +9,9 @@ Run **guiching** by `go build && ./guiching` or just by `go run *.go` in the pro
 root directory. Then, in a web browser, visit http://localhost:3000 to
 see your newly generated hexagram(s).
 
+## Docker
+
+1. Build docker image: `docker build -t guiching .`
+2. Run docker container: `docker run -it --rm -p 80:3000 guiching:latest`
+3. Visit http://localhost in your chosen web browser
+
