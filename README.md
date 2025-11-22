@@ -1,3 +1,5 @@
+*Migrated to [Codeberg.org](https://codeberg.org/tyybbi/guiching)*
+
 # Guiching
 
 A simple I Ching hexagram generator, that uses Go backend and template
